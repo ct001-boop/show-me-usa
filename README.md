@@ -2,8 +2,8 @@
 
 Single-file static site. Lists US retailers, tracks page views and per-retailer link clicks in Google Analytics 4.
 
-**Live:** https://show-me-beige.vercel.app
-**Repo:** https://github.com/ct001-boop/show-me
+**Live:** https://show-me-usa.vercel.app
+**Repo:** https://github.com/ct001-boop/show-me-usa
 **GA4 property:** Show-me US Where to Buy (account: Eastpoint Global) — Measurement ID `G-JMVXK6FJYP`
 
 Every push to `main` redeploys automatically. Editing `index.html` on GitHub in the browser is enough to update the live site.
@@ -91,7 +91,7 @@ Note: custom dimensions do not backfill. `Retailer` was registered on 8 Aug 2026
 
 ## 3. Custom domain (optional)
 
-Vercel project → **Settings** → **Domains** → add e.g. `us.show-me.co.uk`, then add the CNAME record Vercel gives you at your DNS provider. After that, update the two `show-me-beige.vercel.app` references in `index.html` (canonical and og:url).
+Vercel project → **Settings** → **Domains** → add e.g. `us.show-me.co.uk`, then add the CNAME record Vercel gives you at your DNS provider. After that, update the two `show-me-usa.vercel.app` references in `index.html` (canonical and og:url).
 
 ---
 
