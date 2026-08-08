@@ -95,6 +95,22 @@ Vercel project → **Settings** → **Domains** → add e.g. `us.show-me.co.uk`,
 
 ---
 
+## Branding
+
+Styling follows show-me.uk:
+
+| Token | Value | Used for |
+|---|---|---|
+| `--ink` | `#212121` | Body text, headings, CTA buttons |
+| `--accent` | `#00aa84` | Show-me teal: eyebrow, hover states, note bar |
+| `--tint` | `#f5f5f5` | Tag pills, note panel, footer |
+| `--line` | `#e3e4e6` | Card borders |
+| Typeface | Work Sans (400-800) | Loaded from Google Fonts |
+
+The logo and favicon are pulled live from show-me.uk, so a rebrand there flows through automatically. If that URL ever moves, the header falls back to a styled text wordmark rather than breaking. To self-host instead, drop the file in the repo and change the `<img src>` in the masthead.
+
+Dark mode was removed. The Show-me identity is a white and black system with a single teal accent, and a dark variant pulled it off-brand.
+
 ## Notes
 
 - Cards open in a new tab. This keeps the page alive so the analytics event always completes before the user leaves.

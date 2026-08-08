@@ -3,16 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Where to Buy Show-me in the USA | Show-me Boards</title>
-<meta name="description" content="Buy Show-me drywipe boards and classroom products from authorised US retailers including Amazon, Walmart and Quill.">
+<title>Where to Buy Show-me in the USA | Show-me</title>
+<meta name="description" content="Buy Show-me mini whiteboards and classroom products from authorised US retailers including Amazon, Walmart and Quill.">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#212121">
 <link rel="canonical" href="https://show-me-usa.vercel.app/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Show-me">
 <meta property="og:title" content="Where to Buy Show-me in the USA">
-<meta property="og:description" content="Shop Show-me classroom products from authorised US retailers.">
+<meta property="og:description" content="Shop Show-me mini whiteboards and classroom products from authorised US retailers.">
 <meta property="og:url" content="https://show-me-usa.vercel.app/">
+<meta property="og:image" content="https://show-me.uk/wp-content/uploads/2024/08/show-me-logo.webp">
+
+<link rel="icon" href="https://show-me.uk/favicon.ico">
+
+<!-- Brand typeface: Work Sans, as used on show-me.uk -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 
 <!-- ============================================================
      GOOGLE ANALYTICS 4
@@ -41,147 +51,167 @@
 </script>
 
 <style>
+  /* ---------- Show-me brand tokens (taken from show-me.uk) ---------- */
   :root{
-    --bg:#f7f8fa;
+    --ink:#212121;          /* body + heading colour */
+    --ink-soft:#575757;
+    --ink-faint:#7c7c7c;
+    --accent:#00aa84;       /* Show-me teal */
+    --accent-dark:#008e6e;
+    --bar:#212121;          /* black nav strip */
+    --page:#ffffff;
     --panel:#ffffff;
-    --ink:#101828;
-    --ink-soft:#4a5567;
-    --ink-faint:#7a8699;
-    --line:#e4e7ec;
-    --accent:#0b62d6;
-    --accent-ink:#ffffff;
-    --radius:14px;
-    --shadow:0 1px 2px rgba(16,24,40,.05), 0 8px 24px -12px rgba(16,24,40,.14);
-    --shadow-hover:0 2px 4px rgba(16,24,40,.06), 0 18px 40px -16px rgba(16,24,40,.24);
-    --maxw:1080px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0e1116;
-      --panel:#161b22;
-      --ink:#e9edf3;
-      --ink-soft:#a7b1c0;
-      --ink-faint:#7c8798;
-      --line:#252c37;
-      --accent:#4d94ff;
-      --accent-ink:#06101f;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
-      --shadow-hover:0 2px 4px rgba(0,0,0,.5), 0 18px 40px -16px rgba(0,0,0,.7);
-    }
+    --tint:#f5f5f5;         /* light grey section */
+    --line:#e3e4e6;
+    --maxw:1120px;
+    --radius:10px;
   }
 
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
     margin:0;
-    background:var(--bg);
+    background:var(--page);
     color:var(--ink);
-    font:16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    font:16px/1.6 "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ---------- Header ---------- */
-  header{
-    border-bottom:1px solid var(--line);
-    background:var(--panel);
-    position:sticky;top:0;z-index:20;
+  .masthead{background:#fff;border-bottom:1px solid var(--line)}
+  .masthead .wrap{
+    display:flex;align-items:center;justify-content:center;
+    gap:16px;padding-top:20px;padding-bottom:18px;
   }
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;font-size:18px;text-decoration:none}
-  .brand-mark{
-    width:30px;height:30px;border-radius:7px;flex:0 0 auto;
-    background:var(--accent);color:var(--accent-ink);
-    display:grid;place-items:center;font-size:15px;font-weight:800;
-  }
-  .flag{
-    font-size:12px;font-weight:600;color:var(--ink-soft);
-    border:1px solid var(--line);border-radius:999px;padding:5px 11px;white-space:nowrap;
+  .logo-link{display:inline-flex;align-items:center;text-decoration:none}
+  .logo-link img{display:block;height:56px;width:auto}
+  .logo-fallback{
+    font-size:30px;font-weight:800;font-style:italic;letter-spacing:-.02em;
+    color:#fff;background:var(--ink);border-radius:999px;padding:8px 22px;
   }
 
+  .strip{background:var(--bar);color:#fff}
+  .strip .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;min-height:48px;
+    font-size:14px;font-weight:700;letter-spacing:.01em;
+  }
+  .strip .tagline{font-style:italic;font-weight:600;color:#fff;opacity:.92}
+  .strip .region{
+    display:inline-flex;align-items:center;gap:8px;
+    color:#fff;font-weight:700;white-space:nowrap;
+  }
+  .strip .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+
   /* ---------- Hero ---------- */
-  .hero{padding:56px 0 8px;text-align:center}
+  .hero{padding:60px 0 4px;text-align:center}
   .eyebrow{
-    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.09em;
-    text-transform:uppercase;color:var(--accent);margin:0 0 14px
+    display:inline-block;margin:0 0 16px;
+    font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);
   }
   h1{
-    margin:0 0 14px;font-size:clamp(28px,5.2vw,44px);line-height:1.12;
-    letter-spacing:-.025em;font-weight:800;
+    margin:0 0 16px;font-weight:800;letter-spacing:-.02em;line-height:1.1;
+    font-size:clamp(30px,5.2vw,46px);
   }
-  .lede{margin:0 auto;max-width:620px;color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px)}
+  .lede{margin:0 auto;max-width:640px;color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px)}
 
   /* ---------- Retailer grid ---------- */
   .grid{
-    display:grid;gap:18px;padding:40px 0 8px;
-    grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+    display:grid;gap:20px;padding:44px 0 8px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   }
   .card{
     background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-    box-shadow:var(--shadow);padding:22px 22px 20px;
+    padding:26px 24px 24px;
     display:flex;flex-direction:column;gap:14px;
     text-decoration:none;color:inherit;
     transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   }
   .card:hover,.card:focus-visible{
-    transform:translateY(-3px);box-shadow:var(--shadow-hover);
-    border-color:color-mix(in srgb, var(--accent) 40%, var(--line));
+    transform:translateY(-3px);
+    box-shadow:0 14px 32px -18px rgba(33,33,33,.45);
+    border-color:var(--accent);
     outline:none;
   }
-  .card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
-  .logo{
-    margin:0;height:40px;display:flex;align-items:center;
-  }
+  .logo{margin:0;height:40px;display:flex;align-items:center}
   .logo img{max-height:34px;max-width:170px;width:auto;height:auto;object-fit:contain}
-  .wordmark{
-    font-size:24px;font-weight:800;letter-spacing:-.025em;line-height:1;
-  }
-  .card p{margin:0;color:var(--ink-soft);font-size:14.5px;flex:1;min-height:44px}
+  .wordmark{font-size:25px;font-weight:800;letter-spacing:-.025em;line-height:1}
+  .card p{margin:0;color:var(--ink-soft);font-size:15px;flex:1;min-height:46px}
 
-  .meta{display:flex;flex-wrap:wrap;gap:6px}
+  .meta{display:flex;flex-wrap:wrap;gap:7px}
   .tag{
-    font-size:11.5px;font-weight:600;color:var(--ink-faint);
-    border:1px solid var(--line);border-radius:999px;padding:4px 9px;
+    font-size:11.5px;font-weight:700;color:var(--ink-soft);
+    background:var(--tint);border-radius:999px;padding:5px 11px;
+    letter-spacing:.02em;
   }
   .cta{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    background:var(--accent);color:var(--accent-ink);
-    font-weight:650;font-size:14.5px;
-    border-radius:9px;padding:11px 16px;margin-top:2px;
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    background:var(--ink);color:#fff;
+    font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+    border-radius:999px;padding:13px 20px;margin-top:4px;
+    transition:background .16s ease;
   }
+  .card:hover .cta{background:var(--accent)}
   .cta svg{flex:0 0 auto}
-  .card.soon{opacity:.62}
-  .card.soon .cta{background:transparent;color:var(--ink-faint);border:1px dashed var(--line)}
+  .card.soon{opacity:.55}
+  .card.soon .cta{
+    background:transparent;color:var(--ink-faint);
+    border:1px dashed var(--line);
+  }
 
-  /* ---------- Note + footer ---------- */
+  /* ---------- Note ---------- */
   .note{
-    margin:28px 0 0;padding:16px 18px;border-radius:12px;
-    background:var(--panel);border:1px solid var(--line);
-    color:var(--ink-soft);font-size:14px;
+    margin:32px 0 0;padding:20px 22px;border-radius:var(--radius);
+    background:var(--tint);border-left:4px solid var(--accent);
+    color:var(--ink-soft);font-size:14.5px;
   }
-  footer{margin-top:48px;border-top:1px solid var(--line);background:var(--panel)}
+  .note strong{color:var(--ink)}
+
+  /* ---------- Footer ---------- */
+  footer{margin-top:56px;background:var(--tint);border-top:1px solid var(--line)}
   .foot{
-    display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;
-    padding:22px 0;font-size:13.5px;color:var(--ink-faint)
+    display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;
+    padding:26px 0;font-size:13px;color:var(--ink-faint)
   }
-  .foot a{color:var(--ink-soft);text-decoration:none}
-  .foot a:hover{text-decoration:underline}
+  .foot a{color:var(--ink-soft);text-decoration:none;font-weight:600}
+  .foot a:hover{color:var(--accent);text-decoration:underline}
+
   .skip{position:absolute;left:-9999px}
-  .skip:focus{left:16px;top:12px;z-index:99;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:8px}
+  .skip:focus{
+    left:16px;top:12px;z-index:99;position:fixed;
+    background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;
+  }
+
+  @media (max-width:560px){
+    .strip .wrap{flex-direction:column;align-items:flex-start;gap:4px;padding-top:10px;padding-bottom:10px}
+    .hero{padding-top:44px}
+  }
 </style>
 </head>
 <body>
 <a class="skip" href="#retailers">Skip to retailers</a>
 
 <header>
-  <div class="wrap bar">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">S</span>
-      <span>Show-me</span>
-    </a>
-    <span class="flag">United States</span>
+  <div class="masthead">
+    <div class="wrap">
+      <a class="logo-link" href="https://show-me.uk/" aria-label="Show-me home">
+        <img src="https://show-me.uk/wp-content/uploads/2024/08/show-me-logo.webp"
+             alt="Show-me - Seeing is achieving"
+             width="240" height="99"
+             onerror="this.outerHTML='<span class=\'logo-fallback\'>Show-me</span>'">
+      </a>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="wrap">
+      <span class="tagline">Seeing is achieving</span>
+      <span class="region"><span class="dot" aria-hidden="true"></span>Where to buy in the USA</span>
+    </div>
   </div>
 </header>
 
@@ -189,7 +219,7 @@
   <section class="hero">
     <p class="eyebrow">Where to buy</p>
     <h1>Buy Show-me products in the USA</h1>
-    <p class="lede">Show-me classroom products are stocked by these US retailers. Pick a store below to browse the full range and buy direct.</p>
+    <p class="lede">Show-me mini whiteboards and classroom products are stocked by these US retailers. Pick a store below to browse the range and buy direct.</p>
   </section>
 
   <section class="grid" id="retailers" aria-label="US retailers"></section>
@@ -205,6 +235,7 @@
 <footer>
   <div class="wrap foot">
     <span>&copy; <span id="yr"></span> Show-me. All rights reserved.</span>
+    <span><a href="https://show-me.uk/">show-me.uk</a></span>
     <span>Retailer names and logos are the property of their respective owners.</span>
   </div>
 </footer>
@@ -256,7 +287,7 @@ const RETAILERS = [
     blurb: "Replace this card with your fourth US retailer and its search link.",
     tags: ["Placeholder"],
     logo: null,
-    color: "#5b6470",
+    color: "#575757",
     enabled: false
   },
   {
@@ -265,7 +296,7 @@ const RETAILERS = [
     blurb: "Replace this card with your fifth US retailer and its search link.",
     tags: ["Placeholder"],
     logo: null,
-    color: "#5b6470",
+    color: "#575757",
     enabled: false
   },
   {
@@ -274,7 +305,7 @@ const RETAILERS = [
     blurb: "Replace this card with your sixth US retailer and its search link.",
     tags: ["Placeholder"],
     logo: null,
-    color: "#5b6470",
+    color: "#575757",
     enabled: false
   }
 ];
@@ -282,7 +313,7 @@ const RETAILERS = [
 /* ==================================================================
    2. RENDER
    ================================================================== */
-const ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>';
+const ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>';
 
 function esc(s){
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
