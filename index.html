@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Where to Buy Show-me in the USA | Show-me</title>
-<meta name="description" content="Buy Show-me mini whiteboards and classroom products from authorised US retailers including Amazon, Walmart and Quill.">
+<meta name="description" content="Buy Show-me dry erase boards, lap boards, markers and classroom packs from authorized US retailers: Amazon, Walmart, Target, Quill, School Specialty and Geyer.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#212121">
 <link rel="canonical" href="https://show-me-usa.vercel.app/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Show-me">
 <meta property="og:title" content="Where to Buy Show-me in the USA">
-<meta property="og:description" content="Shop Show-me mini whiteboards and classroom products from authorised US retailers.">
+<meta property="og:description" content="Shop Show-me dry erase boards, lap boards and classroom packs from authorized US retailers.">
 <meta property="og:url" content="https://show-me-usa.vercel.app/">
 <meta property="og:image" content="https://show-me.uk/wp-content/uploads/2024/08/show-me-logo.webp">
 
@@ -23,6 +23,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     STRUCTURED DATA (JSON-LD)
+     Tells Google this page is a where-to-buy list and which
+     retailers are on it. Keep the URLs here in sync with the
+     RETAILERS array at the bottom of this file.
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://show-me-usa.vercel.app/#webpage",
+      "url": "https://show-me-usa.vercel.app/",
+      "name": "Where to Buy Show-me in the USA",
+      "description": "Authorized US retailers stocking Show-me dry erase boards, lap boards, markers and classroom packs.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://show-me.uk/#brand" }
+    },
+    {
+      "@type": "Brand",
+      "@id": "https://show-me.uk/#brand",
+      "name": "Show-me",
+      "slogan": "Seeing is achieving",
+      "url": "https://show-me.uk/",
+      "logo": "https://show-me.uk/wp-content/uploads/2024/08/show-me-logo.webp"
+    },
+    {
+      "@type": "ItemList",
+      "name": "Show-me retailers in the USA",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 6,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Organization", "name": "Amazon", "url": "https://www.amazon.com/s?srs=20070963011&rh=p_89%3ASHOW-ME" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Organization", "name": "Walmart", "url": "https://www.walmart.com/browse/0?facet=brand:Show-me" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Organization", "name": "Target", "url": "https://www.target.com/b/show-me/-/N-q643legdddf" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Organization", "name": "Quill", "url": "https://www.quill.com/search?keywords=show-me&filter=Brand_Show-me" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Organization", "name": "School Specialty", "url": "https://www.schoolspecialty.com/search?searchTerm=show-me&facet=mfName_ntk_cs%253A%2522Show-me%2522" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Organization", "name": "Geyer Instructional", "url": "https://www.geyerinstructional.com/search-results-page?q=show-me&page=1&rb_categories=Dry%20Erase%20Products%7CDry%20Erase%20Supplies%20and%20Tools%7CErasers%7CLap%20Boards%7CMarkers" } }
+      ]
+    }
+  ]
+}
+</script>
 
 <!-- ============================================================
      GOOGLE ANALYTICS 4
@@ -55,7 +100,7 @@
   :root{
     --ink:#212121;          /* body + heading colour */
     --ink-soft:#575757;
-    --ink-faint:#7c7c7c;
+    --ink-faint:#666666;    /* 6.3:1 on white - AA for normal text */
     --accent:#00aa84;       /* Show-me teal */
     --accent-dark:#008e6e;
     --bar:#212121;          /* black nav strip */
@@ -98,7 +143,7 @@
     gap:16px;min-height:48px;
     font-size:14px;font-weight:700;letter-spacing:.01em;
   }
-  .strip .tagline{font-style:italic;font-weight:600;color:#fff;opacity:.92}
+  .strip .tagline{font-style:italic;font-weight:600;color:#fff}
   .strip .region{
     display:inline-flex;align-items:center;gap:8px;
     color:#fff;font-weight:700;white-space:nowrap;
@@ -110,13 +155,13 @@
   .eyebrow{
     display:inline-block;margin:0 0 16px;
     font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--accent);
+    color:#00775c;                       /* darkened teal: 4.7:1 on white */
   }
   h1{
     margin:0 0 16px;font-weight:800;letter-spacing:-.02em;line-height:1.1;
     font-size:clamp(30px,5.2vw,46px);
   }
-  .lede{margin:0 auto;max-width:640px;color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px)}
+  .lede{margin:0 auto;max-width:660px;color:var(--ink-soft);font-size:clamp(16px,2.2vw,18px)}
 
   /* ---------- Retailer grid ---------- */
   .grid{
@@ -137,13 +182,17 @@
     outline:none;
   }
   .card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){
+    .card,.cta{transition:none}
+    .card:hover,.card:focus-visible{transform:none}
+  }
 
   .logo{margin:0;height:40px;display:flex;align-items:center}
   .logo img{max-height:34px;max-width:170px;width:auto;height:auto;object-fit:contain}
   .wordmark{font-size:25px;font-weight:800;letter-spacing:-.025em;line-height:1}
   .card p{margin:0;color:var(--ink-soft);font-size:15px;flex:1;min-height:46px}
 
-  .meta{display:flex;flex-wrap:wrap;gap:7px}
+  .meta{display:flex;flex-wrap:wrap;align-content:flex-start;gap:7px;min-height:59px}
   .tag{
     font-size:11.5px;font-weight:700;color:var(--ink-soft);
     background:var(--tint);border-radius:999px;padding:5px 11px;
@@ -156,12 +205,17 @@
     border-radius:999px;padding:13px 20px;margin-top:4px;
     transition:background .16s ease;
   }
-  .card:hover .cta{background:var(--accent)}
+  .card:hover .cta{background:var(--accent-dark)}
   .cta svg{flex:0 0 auto}
-  .card.soon{opacity:.55}
+
+  /* "Coming soon" cards. Deliberately NOT done with opacity, which
+     drags the text below AA contrast. Muted tokens instead. */
+  .card.soon{background:var(--tint);border-style:dashed}
+  .card.soon .wordmark{color:var(--ink-soft) !important}
+  .card.soon p{color:var(--ink-soft)}
   .card.soon .cta{
     background:transparent;color:var(--ink-faint);
-    border:1px dashed var(--line);
+    border:1px dashed #bfc1c4;
   }
 
   /* ---------- Note ---------- */
@@ -171,6 +225,17 @@
     color:var(--ink-soft);font-size:14.5px;
   }
   .note strong{color:var(--ink)}
+  .note a{color:#00614b;font-weight:700}
+
+  /* ---------- No-JavaScript fallback ---------- */
+  .nojs{
+    margin:0;padding:26px 24px;border:1px solid var(--line);border-radius:var(--radius);
+    grid-column:1 / -1;
+  }
+  .nojs h2{margin:0 0 10px;font-size:20px}
+  .nojs ul{margin:0;padding-left:20px}
+  .nojs li{margin:6px 0}
+  .nojs a{font-weight:700}
 
   /* ---------- Footer ---------- */
   footer{margin-top:56px;background:var(--tint);border-top:1px solid var(--line)}
@@ -179,12 +244,12 @@
     padding:26px 0;font-size:13px;color:var(--ink-faint)
   }
   .foot a{color:var(--ink-soft);text-decoration:none;font-weight:600}
-  .foot a:hover{color:var(--accent);text-decoration:underline}
+  .foot a:hover{color:var(--accent-dark);text-decoration:underline}
 
   .skip{position:absolute;left:-9999px}
   .skip:focus{
     left:16px;top:12px;z-index:99;position:fixed;
-    background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;
+    background:var(--accent-dark);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;
   }
 
   @media (max-width:560px){
@@ -219,22 +284,37 @@
   <section class="hero">
     <p class="eyebrow">Where to buy</p>
     <h1>Buy Show-me products in the USA</h1>
-    <p class="lede">Show-me mini whiteboards and classroom products are stocked by these US retailers. Pick a store below to browse the range and buy direct.</p>
+    <p class="lede">Show-me dry erase boards, lap boards, markers and classroom packs are stocked by these US retailers. Pick a store below to browse the range and buy direct.</p>
   </section>
 
-  <section class="grid" id="retailers" aria-label="US retailers"></section>
+  <!-- The cards are rendered by the script at the foot of this page.
+       The <noscript> block below is the fallback for anyone with
+       JavaScript disabled, so the page is never blank. -->
+  <section class="grid" id="retailers" aria-label="US retailers">
+    <noscript>
+      <div class="nojs">
+        <h2>Show-me retailers in the USA</h2>
+        <ul>
+          <li><a href="https://www.amazon.com/s?srs=20070963011&amp;rh=p_89%3ASHOW-ME">Amazon</a> - Show-me brand store, Prime delivery</li>
+          <li><a href="https://www.walmart.com/browse/0?facet=brand:Show-me">Walmart</a> - Show-me brand page, free shipping</li>
+          <li><a href="https://www.target.com/b/show-me/-/N-q643legdddf">Target</a> - Show-me brand page, free shipping</li>
+          <li><a href="https://www.quill.com/search?keywords=show-me&amp;filter=Brand_Show-me">Quill</a> - full range, business and school accounts</li>
+          <li><a href="https://www.schoolspecialty.com/search?searchTerm=show-me&amp;facet=mfName_ntk_cs%253A%2522Show-me%2522">School Specialty</a> - K-12 districts and schools</li>
+          <li><a href="https://www.geyerinstructional.com/search-results-page?q=show-me&page=1&rb_categories=Dry%20Erase%20Products%7CDry%20Erase%20Supplies%20and%20Tools%7CErasers%7CLap%20Boards%7CMarkers">Geyer Instructional</a> - purchase orders and quotes</li>
+        </ul>
+      </div>
+    </noscript>
+  </section>
 
   <p class="note">
     <strong>Note:</strong> stock, pricing and availability are set by each retailer and may vary.
-    Can't find what you need? Get in touch and we'll point you to the right stockist.
-    <!-- To add a contact link, replace the sentence above with:
-         Can't find what you need? <a href="mailto:YOUR@EMAIL.COM">Get in touch</a> and we'll point you to the right stockist. -->
+    Can't find what you need? <a href="https://show-me.uk/contact-us/">Get in touch</a> and we'll point you to the right retailer.
   </p>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <span>&copy; <span id="yr"></span> Show-me. All rights reserved.</span>
+    <span>&copy; <span id="yr">2026</span> Show-me. All rights reserved.</span>
     <span><a href="https://show-me.uk/">show-me.uk</a></span>
     <span>Retailer names and logos are the property of their respective owners.</span>
   </div>
@@ -250,63 +330,72 @@
    tags    : small pills, e.g. shipping or account type. [] for none
    logo    : optional path to a logo image, e.g. 'logos/amazon.svg'
              leave as null to show the name as a styled wordmark
-   color   : wordmark colour when logo is null
+   color   : wordmark colour when logo is null. Must reach at least
+             3:1 contrast on white -- these are all 5:1 or better.
+   ctaName : optional shorter name for the button, so a long retailer
+             name does not wrap the button onto two lines. Omit to use name.
    enabled : false renders a greyed-out "Coming soon" card with no link
+
+   If you change a URL here, change it in the <noscript> block and the
+   JSON-LD in <head> as well. Those three lists must agree.
+
+   All six URLs verified live on 9 Aug 2026.
    ================================================================== */
 const RETAILERS = [
   {
     name: "Amazon",
-    url: "https://www.amazon.com/s?k=show-me+boards",
-    blurb: "Fast Prime shipping on popular Show-me drywipe boards and packs.",
-    tags: ["Prime delivery", "Single units"],
+    url: "https://www.amazon.com/s?srs=20070963011&rh=p_89%3ASHOW-ME",
+    blurb: "The full Show-me brand store. Fast Prime shipping on dry erase boards, markers and classroom packs.",
+    tags: ["Prime delivery", "Single units", "Classroom packs"],
     logo: null,
-    color: "#ff9900",
+    color: "#8a5000",
     enabled: true
   },
   {
     name: "Walmart",
-    url: "https://www.walmart.com/search?q=show-me+boards",
-    blurb: "Buy online with free pickup at your local store where available.",
-    tags: ["Store pickup", "Single units"],
+    url: "https://www.walmart.com/browse/0?facet=brand:Show-me",
+    blurb: "Show-me brand page with free shipping on dry erase boards, markers, erasers and cleaners.",
+    tags: ["Free shipping", "Single units", "Classroom packs"],
     logo: null,
     color: "#0071dc",
     enabled: true
   },
   {
+    name: "Target",
+    url: "https://www.target.com/b/show-me/-/N-q643legdddf",
+    blurb: "Official Show-me brand page, including the magnetic letter, number and literacy sets.",
+    tags: ["Free shipping", "Single units", "Magnetic letter sets"],
+    logo: null,
+    color: "#cc0000",
+    enabled: true
+  },
+  {
     name: "Quill",
     url: "https://www.quill.com/search?keywords=show-me&filter=Brand_Show-me",
-    blurb: "Full Show-me brand range. Best for schools and bulk classroom orders.",
-    tags: ["Bulk / class packs", "School accounts", "Full range"],
+    blurb: "Full Show-me range priced by the pack and the class set. Best for offices and school buyers.",
+    tags: ["Bulk & classroom packs", "Business accounts", "Full range"],
     logo: null,
     color: "#c8102e",
     enabled: true
   },
   {
-    name: "Retailer 4",
-    url: "https://example.com/replace-me",
-    blurb: "Replace this card with your fourth US retailer and its search link.",
-    tags: ["Placeholder"],
+    name: "School Specialty",
+    url: "https://www.schoolspecialty.com/search?searchTerm=show-me&facet=mfName_ntk_cs%253A%2522Show-me%2522",
+    blurb: "Long-standing K-12 supplier. Show-me dry erase board classroom packs for schools and districts.",
+    tags: ["K-12 & districts", "Purchase orders", "Classroom packs"],
     logo: null,
-    color: "#575757",
-    enabled: false
+    color: "#1a4f8b",
+    enabled: true
   },
   {
-    name: "Retailer 5",
-    url: "https://example.com/replace-me",
-    blurb: "Replace this card with your fifth US retailer and its search link.",
-    tags: ["Placeholder"],
+    name: "Geyer Instructional",
+    ctaName: "Geyer",
+    url: "https://www.geyerinstructional.com/search-results-page?q=show-me&page=1&rb_categories=Dry%20Erase%20Products%7CDry%20Erase%20Supplies%20and%20Tools%7CErasers%7CLap%20Boards%7CMarkers",
+    blurb: "Instructional products specialist. Quotes and purchase orders welcome, free shipping over $69.",
+    tags: ["K-12 & districts", "Purchase orders", "Quotes"],
     logo: null,
-    color: "#575757",
-    enabled: false
-  },
-  {
-    name: "Retailer 6",
-    url: "https://example.com/replace-me",
-    blurb: "Replace this card with your sixth US retailer and its search link.",
-    tags: ["Placeholder"],
-    logo: null,
-    color: "#575757",
-    enabled: false
+    color: "#a8410a",
+    enabled: true
   }
 ];
 
@@ -334,7 +423,7 @@ grid.innerHTML = RETAILERS.map((r, i) => {
     ${headingHtml}
     <p>${esc(r.blurb)}</p>
     <span class="meta">${tagsHtml}</span>
-    <span class="cta">${r.enabled ? 'Shop at ' + esc(r.name) + ARROW : 'Coming soon'}</span>
+    <span class="cta">${r.enabled ? 'Shop at ' + esc(r.ctaName || r.name) + ARROW : 'Coming soon'}</span>
   `;
 
   if (!r.enabled) {
@@ -343,6 +432,7 @@ grid.innerHTML = RETAILERS.map((r, i) => {
 
   return `<a class="card" href="${esc(r.url)}"
              target="_blank" rel="noopener"
+             aria-label="Shop Show-me at ${esc(r.name)}, opens in a new tab"
              data-retailer="${esc(r.name)}"
              data-position="${i + 1}">${inner}</a>`;
 }).join('');

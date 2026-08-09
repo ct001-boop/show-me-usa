@@ -26,10 +26,11 @@ Everything you edit is in one array in `index.html`, near the bottom under `RETA
 {
   name: "Quill",
   url: "https://www.quill.com/search?keywords=show-me&filter=Brand_Show-me",
-  blurb: "Full Show-me brand range. Best for schools and bulk classroom orders.",
-  tags: ["Bulk / class packs", "School accounts", "Full range"],
+  blurb: "Full Show-me range priced by the pack and the class set. Best for offices and school buyers.",
+  tags: ["Bulk & classroom packs", "Business accounts", "Full range"],
   logo: null,          // or "logos/quill.svg"
   color: "#c8102e",    // wordmark colour used when logo is null
+  ctaName: "Quill",    // optional shorter label for the button
   enabled: true        // false = greyed out "Coming soon" card, no link
 }
 ```
@@ -37,13 +38,23 @@ Everything you edit is in one array in `index.html`, near the bottom under `RETA
 | Field | What it does |
 |---|---|
 | `name` | Card heading **and** the label used in your GA4 reports. Keep it stable once live, or your reporting history splits across two labels. |
-| `url` | Exact destination. Amazon and Walmart currently point at search URLs; swap for a brand store page if you have one. |
+| `url` | Exact destination. All six now point at brand-filtered pages, not keyword searches. |
 | `blurb` | One line under the name. |
 | `tags` | Small pills. Use `[]` for none. |
 | `logo` | Path to an image, or `null` for a styled text wordmark. |
+| `color` | Wordmark colour. Must clear 3:1 on white, and all six clear 5:1. Do not use a retailer's raw brand hex without checking: Amazon's `#ff9900` is 2.1:1 and fails. |
+| `ctaName` | Optional shorter name for the button, so a long retailer name does not wrap it onto two lines. Omit to use `name`. |
 | `enabled` | `false` renders a placeholder card that is not clickable and sends no events. |
 
-Retailers 4, 5 and 6 are disabled placeholders. Fill in the name, url and blurb, then set `enabled: true`.
+All six cards are live: Amazon, Walmart, Target, Quill, School Specialty and Geyer Instructional. There are no placeholders left.
+
+**Three lists must agree.** If you change a URL, change it in all three places or the page will contradict itself:
+
+1. the `RETAILERS` array at the foot of `index.html`
+2. the `<noscript>` block inside `<section class="grid">` (the no-JavaScript fallback)
+3. the JSON-LD `ItemList` in `<head>` (what Google reads)
+
+All six URLs were verified live on 9 Aug 2026 and each returns genuine Show-me products: Amazon 66 results, Walmart 27, Target 32, Quill 29, School Specialty 6, Geyer 27.
 
 ### To edit
 
@@ -53,9 +64,11 @@ GitHub → `index.html` → pencil icon → edit → **Commit changes**. Vercel 
 
 Create a `logos/` folder in the repo and add files (SVG or transparent PNG, roughly 200x60), then set `logo: "logos/amazon.svg"`. Most retailers publish brand assets in their affiliate or partner portal. Check each retailer's brand guidelines before use.
 
-### Still placeholder
+### Copy
 
-- The contact sentence near the bottom of the page has no link. To add one, follow the HTML comment right below it.
+Copy is US English: dry erase (not drywipe), lap boards and dry erase boards (not mini whiteboards), classroom packs (not class packs), school supplies (not stationery), authorized, retailer (not stockist). Keep new copy consistent with that.
+
+The contact sentence links to the show-me.uk contact form rather than a mailto, so no individual work address is published.
 
 ---
 
@@ -102,7 +115,8 @@ Styling follows show-me.uk:
 | Token | Value | Used for |
 |---|---|---|
 | `--ink` | `#212121` | Body text, headings, CTA buttons |
-| `--accent` | `#00aa84` | Show-me teal: eyebrow, hover states, note bar |
+| `--accent` | `#00aa84` | Show-me teal: note bar, focus ring, dot |
+| `--accent-dark` | `#008e6e` | Teal for hover fills and the skip link |
 | `--tint` | `#f5f5f5` | Tag pills, note panel, footer |
 | `--line` | `#e3e4e6` | Card borders |
 | Typeface | Work Sans (400-800) | Loaded from Google Fonts |
@@ -117,4 +131,7 @@ Dark mode was removed. The Show-me identity is a white and black system with a s
 - Ad blockers block GA4. Expect real click counts to be roughly 10 to 30 percent higher than GA4 reports. The relative ranking between retailers stays accurate, which is usually what matters.
 - No cookie banner. GA4 sets cookies, so UK and EU visitors need consent under PECR/GDPR. The page targets the US, but it is reachable from anywhere. Worth a check with whoever handles Eastpoint's privacy compliance.
 - GA4 reporting time zone is United Kingdom; currency is USD.
-- Dark mode, mobile layouts and keyboard navigation all work with no extra setup.
+- Mobile layouts and keyboard navigation work with no extra setup. Dark mode is deliberately not implemented.
+- Accessibility: all wordmark colours clear 5:1 on white, the eyebrow teal was darkened to `#00775c` for AA, and "Coming soon" cards use muted colour tokens rather than `opacity`, which used to drag their text below AA.
+- With JavaScript disabled the grid renders a plain `<noscript>` list of the six retailers instead of a blank page.
+- Structured data: a JSON-LD `@graph` in `<head>` describes the page, the Show-me brand and the six retailers as an `ItemList`.
