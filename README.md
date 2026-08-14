@@ -68,7 +68,7 @@ Create a `logos/` folder in the repo and add files (SVG or transparent PNG, roug
 
 Copy is US English: dry erase (not drywipe), lap boards and dry erase boards (not mini whiteboards), classroom packs (not class packs), school supplies (not stationery), authorized, retailer (not stockist). Keep new copy consistent with that.
 
-The contact sentence is a `mailto:` to calvin.temple@eastpointglobal.com. That address is published in plain HTML on a public page, so expect it to be picked up by address harvesters over time. Swapping it for the show-me.uk contact form (`https://show-me.uk/contact-us/`) avoids that if the spam ever gets annoying.
+The contact sentence is a `mailto:` to sales@eastpointglobal.com. That address is published in plain HTML on a public page, so expect it to be picked up by address harvesters over time. Swapping it for the show-me.uk contact form (`https://show-me.uk/contact-us/`) avoids that if the spam ever gets annoying.
 
 ---
 
