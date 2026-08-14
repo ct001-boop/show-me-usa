@@ -308,7 +308,7 @@
 
   <p class="note">
     <strong>Note:</strong> stock, pricing and availability are set by each retailer and may vary.
-    Can't find what you need? <a href="https://show-me.uk/contact-us/">Get in touch</a> and we'll point you to the right retailer.
+    Can't find what you need? <a href="mailto:calvin.temple@eastpointglobal.com">Get in touch</a> and we'll point you to the right retailer.
   </p>
 </main>
 
@@ -463,15 +463,10 @@ document.addEventListener('click', function (e) {
 
   gtag('event', 'retailer_click', params);
 
-  // Also send GA4's standard outbound-link event so clicks show up in the
-  // built-in Events report with no extra configuration.
-  gtag('event', 'click', {
-    link_url: card.href,
-    link_domain: host,
-    link_text: retailer,
-    outbound: true,
-    transport_type: 'beacon'
-  });
+  // There is deliberately no manual 'click' event here. GA4's enhanced
+  // measurement already logs outbound clicks at the stream level, so
+  // sending our own duplicated the built-in 'click' count (6 card clicks
+  // showed as 12). Removed 9 Aug 2026 after verifying in GA4 Realtime.
 
   console.log('[analytics] retailer_click', params);
 }, true);

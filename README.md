@@ -68,7 +68,7 @@ Create a `logos/` folder in the repo and add files (SVG or transparent PNG, roug
 
 Copy is US English: dry erase (not drywipe), lap boards and dry erase boards (not mini whiteboards), classroom packs (not class packs), school supplies (not stationery), authorized, retailer (not stockist). Keep new copy consistent with that.
 
-The contact sentence links to the show-me.uk contact form rather than a mailto, so no individual work address is published.
+The contact sentence is a `mailto:` to calvin.temple@eastpointglobal.com. That address is published in plain HTML on a public page, so expect it to be picked up by address harvesters over time. Swapping it for the show-me.uk contact form (`https://show-me.uk/contact-us/`) avoids that if the spam ever gets annoying.
 
 ---
 
@@ -96,9 +96,11 @@ Note: custom dimensions do not backfill. `Retailer` was registered on 8 Aug 2026
 |---|---|---|
 | `page_view` | Automatic on page load | standard |
 | `retailer_click` | Retailer card clicked | `retailer_name`, `link_url`, `link_domain`, `list_position` |
-| `click` | Same click, GA4 standard outbound event | `link_url`, `link_domain`, `link_text`, `outbound` |
+| `click` | Same click, sent automatically by GA4 enhanced measurement | `link_url`, `link_domain`, `outbound` |
 
-`retailer_click` is the one to report on. The `click` event is a backup so clicks appear in GA4's built-in reports with no configuration. Enhanced measurement is also on at the stream level, which catches outbound clicks independently.
+`retailer_click` is the one to report on. `click` comes from GA4 enhanced measurement at the stream level and needs no code.
+
+The page used to send its own `click` event as a backup as well. That double-counted, because enhanced measurement was already sending one: six card clicks showed as twelve. The manual event was removed on 9 Aug 2026. If you ever see `click` at exactly twice `retailer_click` again, that duplicate has come back.
 
 ---
 
